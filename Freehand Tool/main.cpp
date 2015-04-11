@@ -8,7 +8,7 @@
 #include <cmath>
 
 GLuint framebuffer;
-const int screenWidth = 800;
+const int screenWidth = 1000;
 const int screenHeight = 600;
 const float PI = 3.141592;
 
@@ -61,7 +61,7 @@ void mouseFunc(int button, int state, int x, int y){
 int main(int argc, char **argv){
 	glutInit(&argc, argv);
 
-	glutInitWindowSize(800, 600);
+	glutInitWindowSize(screenWidth, screenHeight);
 	glutInitWindowPosition(50, 50);
 	glutCreateWindow("OpenGL Pen");
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); 
