@@ -37,10 +37,6 @@ void addBlob(int x, int y){
 	glFlush();
 }
 
-void mousePointer(int x, int y){
-	glFlush();
-}
-
 void motionFunc(int x, int y){
 	float dispX = (float)x - prevX;
 	float dispY = (float)y - prevY;
@@ -49,10 +45,6 @@ void motionFunc(int x, int y){
 	for (int i = 0; i <= trigonolen; i++){
 		addBlob(x - (dispX * i / trigonolen), y - (dispY * i / trigonolen));
 	}
-
-	/*printf("current: %f, %f\n", (float)x, (float)y);
-	printf("prev: %f, %f\n", prevX, prevY);
-	printf("disp: %f, %f\n", dispX, dispY);*/
 
 	prevX = (float)x;
 	prevY = (float)y;
@@ -74,10 +66,10 @@ int main(int argc, char **argv){
 	glutCreateWindow("OpenGL Pen");
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f); 
 	glClear(GL_COLOR_BUFFER_BIT); 
+	glFlush();
 
 	glutSetCursor(GLUT_CURSOR_SPRAY);
 
-	glutPassiveMotionFunc(mousePointer);
 	glutMouseFunc(mouseFunc);
 
 	glutMainLoop();
